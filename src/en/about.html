@@ -1,0 +1,25 @@
+---
+title: "About"
+layout: "base.html"
+---
+
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <h1>About</h1>
+      <div>
+        This is a starter template for building a simple blog website with the <a href="https://www.11ty.dev/"
+           target="_blank">Eleventy</a> static site generator.
+        View the project repo on <a href="https://gitlab.com/florent_tassy/polyglot-tech-blog" target="_blank">GitLab</a>.
+      </div>
+    </div>
+
+    <div class="col-4" style="padding: 2rem;">
+      {% include "components/bio.html" %}
+      <hr style="background-color: transparent">
+      {% include "components/latest-posts.html" %}
+    </div>
+
+  </div>
+
+</div>

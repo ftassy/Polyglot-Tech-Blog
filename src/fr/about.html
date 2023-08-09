@@ -1,0 +1,25 @@
+---
+title: "À propos"
+layout: "base.html"
+---
+
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <h1>À propos</h1>
+      <div>
+        Ceci est un modèle initial pour construire un site et blog multilingue avec le générateur de site statique <a href="https://www.11ty.dev/"
+           target="_blank">Eleventy</a>.
+        Allez voir le dépôt sur <a href="https://gitlab.com/florent_tassy/polyglot-tech-blog" target="_blank">GitLab</a>.
+      </div>
+    </div>
+
+    <div class="col-4" style="padding: 2rem;">
+      {% include "components/bio.html" %}
+      <hr style="background-color: transparent">
+      {% include "components/latest-posts.html" %}
+    </div>
+
+  </div>
+
+</div>

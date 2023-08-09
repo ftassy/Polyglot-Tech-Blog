@@ -1,0 +1,27 @@
+<div>
+    <header>
+        <h2>{{ latestPosts }}</h2>
+    </header>
+
+    <!-- We have to multiply the number of posts by the number of languages -->
+    <!-- e.g. if I want the last 3 posts with 2 languages, I limit to 6 here -->
+    {% for post in (collections.post | reverse).slice(0, 6) %}
+
+    {% if post.data.lang == lang %}
+
+    <h3><a href='{{ post.url | url }}'>{{ post.data.title }}</a></h3>
+    <p>
+        {% if post.data.date %}
+        {{ publishedOn }}: <time datetime="{{ post.data.date | isodate }}">{{ post.data.date | localdate }}</time>
+        {% endif %}
+    </p>
+
+    <p><a href='{{ post.url | url }}' style="text-decoration: none;">{{ post.data.description }}</a></p>
+
+    <hr>
+
+    {% endif %}
+
+    {% endfor %}
+
+</div>

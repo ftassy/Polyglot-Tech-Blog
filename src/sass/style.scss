@@ -1,0 +1,221 @@
+:root {
+    --bg-color: #ffffff;
+    --bg-secondary-color: #f3f3f6;
+    --color-primary: #14854f;
+    --color-lightGrey: #d2d6dd;
+    --color-grey: #747681;
+    --color-darkGrey: #3f4144;
+    --color-error: #d43939;
+    --color-success: #2c8017;
+    --font-color: #333333;
+    --navbar-bg-color: #f8bb6d;
+    --footer-bg-color: #f8bb6d;
+    --transparent-error: rgba(255, 194, 204, 0.3);
+    --transparent-success: rgba(145, 238, 145, 0.3);
+    --link-color: #333333;
+    --grid-maxWidth: 120rem;
+    --grid-gutter: 2rem;
+    --font-size: 1.6rem;
+    --font-family-sans: sans-serif;
+    --font-family-mono: monaco, "Consolas", "Lucida Console", monospace;
+    --content-width: 75%;
+}
+
+.dark-theme {
+    --bg-color: #222222;
+    --bg-secondary-color: #333333;
+    --color-primary: #4cad7e;
+    --color-lightGrey: #323232;
+    --color-grey: #747681;
+    --color-darkGrey: #8794a8;
+    --color-error: #d43939;
+    --color-success: #28bd14;
+    --font-color: #dddddd;
+    --navbar-bg-color: #741e00;
+    --footer-bg-color: #741e00;
+    --transparent-error: rgba(255, 194, 204, 0.3);
+    --transparent-success: rgba(145, 238, 145, 0.3);
+    --link-color: #dddddd;
+}
+
+body {
+    width: 100vw;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+
+    nav {
+        width: 100% !important;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: var(--navbar-bg-color);
+
+        img {
+            max-height: none !important;
+        }
+
+        .tabs {
+            align-items: flex-end;
+
+            a {
+                color: var(--font-color);
+            }
+
+            details {
+                border-bottom: 2px solid var(--color-lightGrey);
+
+               summary {
+                    background-color: transparent !important;
+                    border-bottom-color: transparent !important;
+                }
+
+                button:hover {
+                    background-color: transparent;
+                    border-bottom: none !important;
+                }
+
+                p {
+                    a {
+                        border-bottom-width: 0px !important;
+                    }
+                }
+
+                .card {
+                    z-index: 10;
+                }
+            }
+
+            details:hover {
+                background-color: var(--color-lightGrey);
+                border-bottom-color: var(--color-darkGrey);
+            }
+
+            details[open] {
+                background-color: var(--transparent-success);
+            }
+
+            .button {
+                background-color: var(--navbar-bg-color);
+                border-bottom: 2px solid var(--color-lightGrey);
+                border-radius: 0%;
+                border-left: none;
+                border-right: none;
+                margin-left: 0%;
+                margin-right: 0%;
+                opacity: 1;
+            }
+
+            #nightModeWrapper {
+                margin-bottom: 0;
+                display: block;
+            }
+
+            .button:hover,
+            a:hover {
+                background-color: var(--color-lightGrey);
+                border-bottom: 2px solid var(--color-darkGrey);
+            }
+        }
+    }
+
+    & > footer {
+        padding: 1rem;
+        width: 100% !important;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: var(--footer-bg-color);
+    }
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: underline;
+}
+
+pre {
+    max-width: 90vw;
+}
+
+code {
+    color: var(--link-color);
+}
+
+.button {
+    color: var(--font-color);
+}
+
+.logo {
+    margin: 0;
+    font-weight: bold;
+    font-size: medium;
+}
+
+.content {
+    width: var(--content-width);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.night-mode-btn {
+    color: var(--font-color);
+    background-color: transparent;
+    border: none;
+    svg {
+        fill: var(--font-color);
+    }
+}
+
+.stretch-height {
+    height: 100%;
+}
+
+article {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.blog-list {
+    display: grid;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.blog-single {
+    color: var(--font-color);
+    border-style: solid;
+    border-width: 1px;
+    padding: 1rem;
+
+    .title {
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+
+    p {
+        margin: 0;
+    }
+
+    .description {
+        margin-top: 1rem;
+    }
+}
+
+/* 
+Syntax highlight diff styling
+Refer to https://www.11ty.dev/docs/plugins/syntaxhighlight/
+*/
+.token.deleted {
+    background-color: var(--transparent-error);
+}
+.token.inserted {
+    background-color: var(--transparent-success);
+}
+
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+    -webkit-user-select: none;
+    user-select: none;
+}

@@ -1,0 +1,9 @@
+---
+permalink: css/light.css
+---
+
+{% set css %}
+    {% include "../../node_modules/prismjs/themes/prism-coy.min.css" %}
+{% endset %}
+
+{{ css | cssmin | safe }}

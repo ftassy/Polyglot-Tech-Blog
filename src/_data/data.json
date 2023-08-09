@@ -1,0 +1,13 @@
+{
+    "author": "Florent Tassy",
+    "languages": [ "en", "fr" ],
+    "title": {
+        "en": "Polyglot Tech Blog",
+        "fr": "Polyglot Tech Blog"
+    },
+    "baseUrl": "http://localhost:8080",
+    "keywords": {
+        "en": "polyglot, multilingual, blog, eleventy, 11ty, starter, template",
+        "fr": "polyglotte, multilingue, blog, eleventy, 11ty, départ, modèle"
+    }
+}

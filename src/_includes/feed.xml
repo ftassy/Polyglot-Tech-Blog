@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xml:base="{{ data.baseUrl }}" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>{{ data.title[lang] }}</title>
+    <link>{{ [data.baseUrl, page.url] | join }}</link>
+    <atom:link href="{{ [data.baseUrl, page.url] | join }}" rel="self" type="application/rss+xml"/>
+    <description>{{ langLabel }}</description>
+    <language>{{ lang }}</language>
+    {% for post in collections.post | reverse %}
+    {% if post.data.lang == lang %}
+      {% set absolutePostUrl = [data.baseUrl, post.url] | join  %}
+      <item>
+        <title>{{ post.data.title }}</title>
+        <link>{{ absolutePostUrl }}</link>
+        <description>{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</description>
+        <pubDate>{{ post.date | dateToRfc822 }}</pubDate>
+        <dc:creator>{{ post.data.author }}</dc:creator>
+        <guid>{{ absolutePostUrl }}</guid>
+      </item>
+      {% endif %}
+    {% endfor %}
+  </channel>
+</rss>

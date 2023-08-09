@@ -1,0 +1,35 @@
+# The Docker image that will be used to build your app
+image: node:alpine
+
+# Functions that should be executed before the build script is run
+before_script:
+    - apk upgrade
+    - npm ci
+    - echo "Update baseUrl in src/data.json and pathPrefix in .eleventy.js"
+    - cp gitlab-pages.js prod.js
+    - npm run set:prod:baseUrl
+    - npm run set:prod:pathPrefix
+    - echo "Build the website"
+    - npm run build
+checks:
+    script:
+        - echo "Install Java"
+        - apk add openjdk17
+        - echo "Check HTML validity"
+        - npm run check:markup:unix
+        - echo "Check CSS validity"
+        - npm run check:css:unix
+
+# ******* Deploy on GitLab Pages *******
+# Comment or delete lines 25 to 35 if you don't plan to deploy on GitLab Pages.
+pages:
+    script:
+        - echo "Deploy on GitLab Pages"
+    artifacts:
+        paths:
+            # The folder that contains the files to be exposed at the Page URL
+            - public
+    rules:
+        # This ensures that only pushes to the default branch will trigger
+        # a pages deploy
+        - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH

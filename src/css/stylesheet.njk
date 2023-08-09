@@ -1,0 +1,9 @@
+---
+permalink: css/stylesheet.css
+---
+{% set css %}
+    {% include "../../node_modules/chota/dist/chota.min.css" %}
+    {% include "../sass/style.css" %}
+{% endset %}
+
+{{ css | tagtochip | cssmin | safe }}

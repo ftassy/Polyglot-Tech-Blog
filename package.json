@@ -1,0 +1,59 @@
+{
+  "name": "polyglot-tech-blog",
+  "version": "1.0.0",
+  "description": "11ty starter template with i18n, syntax highlight, light and dark themes, SASS support and Dark Mode.",
+  "keywords": [
+    "11ty",
+    "SASS",
+    "SCSS",
+    "eleventy",
+    "i18n",
+    "localization",
+    "multilingual",
+    "polyglot"
+  ],
+  "author": "Florent Tassy",
+  "license": "GPL-3.0-or-later",
+  "homepage": "https://polyglot-tech-blog.netlify.app",
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.com/florent_tassy/polyglot-tech-blog"
+  },
+  "scripts": {
+    "watch:sass": "sass --watch src/sass src/css",
+    "watch:eleventy": "eleventy --serve",
+    "build:sass": "sass src/sass src/css",
+    "build:eleventy": "eleventy",
+    "dev": "npm-run-all build:sass --parallel watch:*",
+    "build": "npm-run-all build:sass --parallel build:*",
+    "set:dev:baseUrl": "node -e \"const fs = require('fs'); const host = require('./prod.js'); const data = 'src/_data/data.json'; let content = fs.readFileSync(data, 'utf8'); fs.writeFileSync(data, content.replace(host.baseUrl, 'http://localhost:8080'));\"",
+    "set:dev:pathPrefix": "node -e \"const fs = require('fs'); const host = require('./prod.js'); const config = './.eleventy.js'; let content = fs.readFileSync(config, 'utf8'); fs.writeFileSync(config, content.replace('pathPrefix: \\\"'+host.pathPrefix+'\\\"', 'pathPrefix: \\\"\\\"'));\"",
+    "set:prod:baseUrl": "node -e \"const fs = require('fs'); const host = require('./prod.js'); const data = 'src/_data/data.json'; let content = fs.readFileSync(data, 'utf8'); fs.writeFileSync(data, content.replace('http://localhost:8080', host.baseUrl));\"",
+    "set:prod:pathPrefix": "node -e \"const fs = require('fs'); const host = require('./prod.js'); const config = './.eleventy.js'; let content = fs.readFileSync(config, 'utf8'); fs.writeFileSync(config, content.replace('pathPrefix: \\\"\\\"', 'pathPrefix: \\\"'+host.pathPrefix+'\\\"'));\"",
+    "prenetlify:build": "cp -f netlify.js prod.js && npm run clean && npm run set:prod:baseUrl && npm run set:prod:pathPrefix",
+    "netlify:build": "npm run build",
+    "postnetlify:build": "npm run set:dev:baseUrl && npm run set:dev:pathPrefix && rm -f prod.js",
+    "premanual:build": "npm run clean && npm run set:prod:baseUrl && npm run set:prod:pathPrefix",
+    "manual:build": "npm run build",
+    "postmanual:build": "npm run set:dev:baseUrl && npm run set:dev:pathPrefix",
+    "debug:unix": "DEBUG=Eleventy* && npx @11ty/eleventy && npm run dev",
+    "check:dependencies": "npx auditjs ossi && npm outdated && npm audit",
+    "check:markup:unix": "java -jar node_modules/vnu-jar/build/dist/vnu.jar --skip-non-html ./public",
+    "check:css:unix": "java -jar node_modules/vnu-jar/build/dist/vnu.jar --skip-non-css ./public",
+    "check:markup:win": "java -jar node_modules\\vnu-jar\\build\\dist\\vnu.jar --skip-non-html .\\public",
+    "check:css:win": "java -jar node_modules\\vnu-jar\\build\\dist\\vnu.jar --skip-non-css .\\public",
+    "clean": "node -e \"const fs = require('fs'); fs.rm('public',{recursive: true}, () => fs.mkdir('public', () => console.log('\"public\" cleaned...')))\""
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy-plugin-rss": "^1.2.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
+    "auditjs": "^4.0.41",
+    "chota": "^0.9.2",
+    "clean-css": "^5.3.2",
+    "html-minifier": "^4.0.0",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.64.2",
+    "vnu-jar": "^23.4.11"
+  }
+}

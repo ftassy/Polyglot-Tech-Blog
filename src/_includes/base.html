@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+
+  <head>
+  {% include "components/meta.html" %}
+    <title>{{ title }}</title>
+    <link {% if data.languages[0] === lang %}id="default-lang"{% endif %} rel="alternate" hreflang="{{ lang }}" href="{{ [data.baseUrl, page.url] | join }}">
+    {% for link in page.url | locale_links %}
+    <link {% if data.languages[0] === link.lang %}id="default-lang"{% endif %} rel="alternate" hreflang="{{ link.lang }}" href="{{ [data.baseUrl, link.url] | join | url }}">
+    {% endfor %}
+    <meta name="description" content="{{ title }}">
+    <meta name="author" content="{{ data.author }}">
+    <meta name="keywords" content="{{ data.keywords[lang] }}">
+  </head>
+
+  <body id="nightModeDiv" class="" vocab="https://schema.org/">
+    {% include "components/navbar.html" %}
+    <main>
+      {{ content | safe }}
+    </main>
+    {% include "components/footer.html" %}
+    {% include "components/scripts.html" %}
+
+  </body>
+
+</html>
