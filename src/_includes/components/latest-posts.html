@@ -9,16 +9,25 @@
 
     {% if post.data.lang == lang %}
 
-    <h3><a href='{{ post.url | url }}'>{{ post.data.title }}</a></h3>
-    <p>
-        {% if post.data.date %}
-        {{ publishedOn }}: <time datetime="{{ post.data.date | isodate }}">{{ post.data.date | localdate }}</time>
-        {% endif %}
-    </p>
+    <div typeof="BlogPosting">
+        <h3 property="headline"><a href="{{ post.url | url }}">{{ post.data.title }}</a></h3>
+        <p>
+            {% if post.data.date %}
+            {{ publishedOn }}: 
+            <time datetime="{{ post.data.date | isodate }}" property="datePublished">
+                {{ post.data.date | localdate }}
+            </time>
+            {% endif %}
+        </p>
 
-    <p><a href='{{ post.url | url }}' style="text-decoration: none;">{{ post.data.description }}</a></p>
+        <p property="abstract">
+            <a href="{{ post.url | url }}" style="text-decoration: none;">
+                {{ post.data.description }}
+            </a>
+        </p>
 
-    <hr>
+        <hr>
+    </div>
 
     {% endif %}
 
