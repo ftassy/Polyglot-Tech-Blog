@@ -1,66 +1,71 @@
 <header>
-  <nav class="nav">
-    <div class="content">
-      <!-- Logo -->
-      <div class="nav-left">
-        <a class="brand" href="{{ '/' | locale_url | url }}" title="{{ home }}">
-          <img src="{{ '/img/logo.svg' | url }}" alt="Polyglot Tech Blog logo" width="120" height="120">
-          {{ data.title[lang] or data.title[data.languages[0]] }}
-        </a>
-      </div>
-      <div class="nav-right">
-        <!-- Pages -->
-        <div class="tabs">
-          <a href="{{ '/' | locale_url | url }}">{{ home }}</a>
-          <a href="{{ '/about' | locale_url | url }}">{{ about }}</a>
-          <a href="{{ '/blog' | locale_url | url }}">{{ blog }}</a>
-          <!-- Language selector -->
-          <details class="dropdown">
-            <summary class="button icon-only">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 24 24" width="24" fill="var(--font-color)">
-                <path d="M11.525 14h4.385l-1.993-4.954L11.525 14zm5.19 2h-6.156l-1.658 3.435a1 1 0 0 1-1.802-.87l5.017-10.388a2 2 0 0 1
+    <nav class="nav">
+        <div class="content">
+            <!-- Logo -->
+            <div class="nav-left">
+                <a class="brand" href="{{ '/' | locale_url | url }}" title="{{ home }}">
+                    <img src="{{ '/img/logo.svg' | url }}" alt="Polyglot Tech Blog logo" width="120" height="120">
+                    {{ data.title[lang] or data.title[data.languages[0]] }}
+                </a>
+            </div>
+            <div class="nav-right">
+                <!-- Pages -->
+                <div class="tabs">
+                    <a href="{{ '/' | locale_url | url }}">{{ home }}</a>
+                    <a href="{{ '/about' | locale_url | url }}">{{ about }}</a>
+                    <a href="{{ '/blog' | locale_url | url }}">{{ blog }}</a>
+                    <!-- Language selector -->
+                    <details class="dropdown">
+                        <summary class="button icon-only">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 24 24" width="24"
+                                 fill="var(--font-color)">
+                                <path d="M11.525 14h4.385l-1.993-4.954L11.525 14zm5.19 2h-6.156l-1.658 3.435a1 1 0 0 1-1.802-.87l5.017-10.388a2 2 0 0 1
                     3.656.123l4.156 10.327a1 1 0 0 1-1.856.746L16.715 16zM1 0h8a1 1 0 1 1 0 2H1a1 1 0 1 1 0-2zm0 5a1 1 0 1 1 0-2h7.003a2 2 0
                     0 1 1.736 2.992c-.945 1.654-1.993 2.844-3.165 3.554-1.472.893-3.32 1.372-5.537 1.453a1 1 0 1 1-.074-1.998c1.898-.07
                     3.419-.464 4.574-1.165C6.384 7.323 7.213 6.382 8.003 5H1z"></path>
-              </svg>
-            </summary>
-            <div class="card" typeof="WebSite" resource="{{ data.baseUrl }}">
-              <span hidden property="name">{{ data.title[lang] }}</span>
-              <span class="is-center text-success" property="inLanguage" typeof="Language">
-                <span hidden property="alternateName">{{ lang }}</span>
-                <span property="name">{{ langLabel }}</span>
-              </span>
-              {% for link in page.url | locale_links %}
-              <span property="inLanguage" typeof="Language">
-                <span hidden property="alternateName" xml:lang="{{ link.lang }}" lang="{{ link.lang }}">{{ link.lang }}</span>
-                <a href="{{ link.url | url }}" property="url">
-                  <span property="name" xml:lang="{{ link.lang }}" lang="{{ link.lang }}">{{ link.label }}</span>
-                </a>
-              </span>
-              {% endfor %}
+                            </svg>
+                        </summary>
+                        <div class="card" typeof="WebPage" resource="{{ page.url | locale_url | url }}">
+                            <span hidden property="name">{{ data.title[lang] }}</span>
+                            <span class="is-center text-success" property="inLanguage" typeof="Language" {% if
+                                  data.languageUris[lang] %}resource="{{ data.languageUris[lang] }}" {% endif %}>
+                                <span hidden property="alternateName">{{ lang }}</span>
+                                <span property="name">{{ langLabel }}</span>
+                            </span>
+                            {% for link in page.url | locale_links %}
+                            <span property="inLanguage" typeof="Language" {% if data.languageUris[lang]
+                                  %}resource="{{ data.languageUris[link.lang] }}" {% endif %}>
+                                <span hidden property="alternateName" xml:lang="{{ link.lang }}"
+                                      lang="{{ link.lang }}">{{ link.lang }}</span>
+                                <a href="{{ link.url | url }}" property="url">
+                                    <span property="name" xml:lang="{{ link.lang }}" lang="{{ link.lang }}">{{
+                                        link.label }}</span>
+                                </a>
+                            </span>
+                            {% endfor %}
+                        </div>
+                    </details>
+                    <!-- Dark / light mode switcher -->
+                    <div id="nightModeWrapper">
+                        <button id="nightModeButton" class="button icon-only" title="Color schema switch"
+                                aria-label="Color schema switch">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 24 24" width="24"
+                                 fill="var(--font-color)">
+                                <path
+                                      d="M10 18c.112 0 .112-5.333 0-16a8 8 0 1 0 0 16zm0 2C4.477 20 0 15.523 0 10S4.477 0 10 0s10 4.477 10 10-4.477 10-10 10z">
+                                </path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
             </div>
-          </details>
-          <!-- Dark / light mode switcher -->
-          <div id="nightModeWrapper">
-            <button id="nightModeButton" class="button icon-only" title="Color schema switch"
-                    aria-label="Color schema switch">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 24 24" width="24" fill="var(--font-color)">
-                <path
-                      d="M10 18c.112 0 .112-5.333 0-16a8 8 0 1 0 0 16zm0 2C4.477 20 0 15.523 0 10S4.477 0 10 0s10 4.477 10 10-4.477 10-10 10z">
-                </path>
-              </svg>
-            </button>
-          </div>
         </div>
-      </div>
-    </div>
-    <!-- **** Begin Fork-Me-On-Gitlab-Ribbon-HTML. Based on https://gitlab.com/seanwasere/fork-me-on-gitlab **** -->
-    <span class="bd-success bg-light"
-          style="font-size: 2rem; font-weight: bold; text-align:center; position:fixed; width: 350px; top:60px; right:-120px;
+        <!-- **** Begin Fork-Me-On-Gitlab-Ribbon-HTML. Based on https://gitlab.com/seanwasere/fork-me-on-gitlab **** -->
+        <span class="bd-success bg-light" style="font-size: 2rem; font-weight: bold; text-align:center; position:fixed; width: 350px; top:60px; right:-120px;
             display:block; -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); transform: rotate(45deg); 
             padding: 4px 25px 4px 45px; z-index:99">
-      <a href="https://gitlab.com/florent_tassy/polyglot-tech-blog">Fork Me On GitLab</a>
-    </span>
-    <!-- **** End Fork-Me-On-Gitlab-Ribbon-HTML **** -->
-  </nav>
+            <a href="https://gitlab.com/florent_tassy/polyglot-tech-blog">Fork Me On GitLab</a>
+        </span>
+        <!-- **** End Fork-Me-On-Gitlab-Ribbon-HTML **** -->
+    </nav>
 </header>

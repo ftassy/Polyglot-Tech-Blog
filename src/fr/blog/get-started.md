@@ -51,12 +51,33 @@ La première personnalisation que vous voudrez apporter est certainement le chan
     // personne écrivant le blog
     "author": "Florent Tassy",
 
+    // Optionnel, mais un plus pour 
+    // le web sémantique : l'URI 
+    // unique qui identifie la 
+    // personne écrivant le blog. 
+    // Évitez d'utiliser une URL 
+    // du blog au risque d'obtenir 
+    // des associations d'ID bizarres
+    "authorUri": "https://gitlab.com/florent_tassy",
+
     // Les codes BCP 47 des langues 
     // utilisées par le blog. La 
     // première est la langue par 
     // défaut. Il en faut au moins 
     // une.
     "languages": [ "en", "fr" ],
+
+    // Optionnel, mais un plus pour 
+    // le web sémantique : les URIs
+    // qui identifient les langues du
+    // blog. http://lexvo.org et 
+    // https://dbpedia.org proposent
+    // des ressources intéressantes 
+    // ici.
+    "languageUris": {
+        "en": "http://dbpedia.org/resource/English_language",
+        "fr": "http://dbpedia.org/resource/French_language"
+    },
 
     // Le titre du blog. Tous les 
     // codes déclarés ci-dessus 
