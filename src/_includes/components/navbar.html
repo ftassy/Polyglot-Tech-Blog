@@ -25,7 +25,7 @@
                     3.419-.464 4.574-1.165C6.384 7.323 7.213 6.382 8.003 5H1z"></path>
                             </svg>
                         </summary>
-                        <div class="card" typeof="WebPage" resource="{{ page.url | locale_url | url }}">
+                        <div class="card" typeof="WebPage" resource="{{ page.url | locale_url | url }}#this">
                             <span hidden property="name">{{ data.title[lang] }}</span>
                             <span class="is-center text-success" property="inLanguage" typeof="Language" {% if
                                   data.languageUris[lang] %}resource="{{ data.languageUris[lang] }}" {% endif %}>
