@@ -1,4 +1,4 @@
-<div class="card" typeof="Person">
+<div class="card" typeof="Person"{% if data.authorUri %}resource="{{ data.authorUri }}"{% endif %}>
     <header style="background-color: var(--color-primary); margin: -1rem -2rem; height: 12rem;">
         <span hidden property="name">The Polyglot Tech Blog cat</span>
         <span class="is-center">

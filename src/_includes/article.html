@@ -16,12 +16,12 @@
   <body id="nightModeDiv" vocab="https://schema.org/">
     {% include "components/navbar.html" %}
     <main>
-      <article class="container" typeof="BlogPosting" resource="{{ [data.baseUrl, page.url] | join }}">
+      <article class="container" typeof="BlogPosting">
          <header>
-          <h1 property="name">{{title}}</h1>
+          <h1 property="headline">{{title}}</h1>
           <div>
             {% if author %}
-            <div class="author" property="author" typeof="Person">
+            <div class="author" property="author" typeof="Person"{% if data.authorUri %}resource="{{ data.authorUri }}"{% endif %}>
               <span property="name">{{ author }}</span>
             </div>
             {% endif %}

@@ -1,0 +1,42 @@
+<div class="container">
+    <h1>{{ title }} “{{ tag }}”</h1>
+    <div class="blog-list">
+      {% set taglist = collections[ tag ] %}
+      {% for post in taglist | reverse %}
+        {% if post.data.lang == lang %}
+          <div class="card" typeof="BlogPosting">
+            <header>
+              <h2>
+                <a href="{{ post.url | url }}" property="url">{{ post.data.title }}</a>
+              </h2>
+              <div>
+                {% if post.data.author %}
+                <div class="author" property="author" typeof="Person"{% if data.authorUri %}resource="{{ data.authorUri }}"{% endif %}>
+                  {{ writtenBy }}: <span property="headline">{{ post.data.author }}</span>
+                </div>
+                {% endif %}
+                {% if post.data.date %}
+                  {{ publishedOn }}:
+                  <time datetime="{{ post.data.date | isodate }}" property="datePublished">{{ post.data.date | localdate }}</time>
+                {% endif %}
+              </div>
+              {% for tag in post.data.tags %}
+                {% if tag == "post" or tag == post.data.lang %}
+                  {% else %}
+                    <span class="chip is-small" property="keywords">
+                      <a href="/{{ lang }}/tags/{{ tag }}">{{ tag }}</a>
+                    </span>
+                {% endif %}
+              {% endfor %}
+            </header>
+            <p property="abstract">
+              <a href='{{ post.url | url }}' style="text-decoration: none;">{{ post.data.description }}</a>
+            </p>
+            <footer class="is-left">
+              <a href='{{ post.url | url }}' class="button">{{ read }}</a>
+            </footer>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>

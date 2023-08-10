@@ -4,10 +4,10 @@
       <div class="col is-center">
         <p>
         <ul style="list-style: none;">
-          <li>{{ madeBy }} 
-            <a href="https://keyoxide.org/EAC330CB8AF0462185073361EA6597510A8DBD15" target="_blank">
-              Florent Tassy
-            </a>
+          <li typeof="Person" {% if data.authorUri %}resource="{{ data.authorUri }}" {% endif %}>{{ madeBy }}
+            {% if data.authorUri %}<a href="{{ data.authorUri }}" target="_blank">{% endif %}
+              <span property="name">{{ data.author }}</span>
+            {% if data.authorUri %}</a>{% endif %}
           </li>
           <li>
             <ul>

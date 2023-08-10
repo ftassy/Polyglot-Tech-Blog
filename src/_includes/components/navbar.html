@@ -25,11 +25,14 @@
               </svg>
             </summary>
             <div class="card" typeof="WebSite" resource="{{ data.baseUrl }}">
+              <span hidden property="name">{{ data.title[lang] }}</span>
               <span class="is-center text-success" property="inLanguage" typeof="Language">
+                <span hidden property="alternateName">{{ lang }}</span>
                 <span property="name">{{ langLabel }}</span>
               </span>
               {% for link in page.url | locale_links %}
               <span property="inLanguage" typeof="Language">
+                <span hidden property="alternateName" xml:lang="{{ link.lang }}" lang="{{ link.lang }}">{{ link.lang }}</span>
                 <a href="{{ link.url | url }}" property="url">
                   <span property="name" xml:lang="{{ link.lang }}" lang="{{ link.lang }}">{{ link.label }}</span>
                 </a>
