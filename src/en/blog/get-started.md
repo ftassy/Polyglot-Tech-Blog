@@ -50,6 +50,13 @@ The first customisation that you will probably want to bring is changing the con
     // Full name of the blog author
     "author": "Florent Tassy",
 
+    // Optional, but nice for semantic
+    // web : the unique URI that 
+    // identifies the author. Avoid
+    // using a URL of the blog or you
+    // may get weird ID associations.
+    "authorUri": "https://gitlab.com/florent_tassy",
+
     // BCP 47 codes of the languages 
     // used on the blog. 
     // The first one is the default 
@@ -63,6 +70,17 @@ The first customisation that you will probably want to bring is changing the con
     "title": {
         "en": "Polyglot Tech Blog",
         "fr": "Polyglot Tech Blog"
+    },
+
+    // Optional, but nice for semantic
+    // web : the URIs that identify
+    // the blog languages. 
+    // http://lexvo.org and 
+    // https://dbpedia.org provides
+    // interesting resources here
+    "languageUris": {
+        "en": "http://dbpedia.org/resource/English_language",
+        "fr": "http://dbpedia.org/resource/French_language"
     },
 
     // URL the blog will be deployed to. 

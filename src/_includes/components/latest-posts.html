@@ -10,10 +10,10 @@
     {% if post.data.lang == lang %}
 
     <div typeof="BlogPosting">
-        <h3 property="headline"><a href="{{ post.url | url }}">{{ post.data.title }}</a></h3>
+        <h3 property="headline"><a href="{{ post.url | url }}" property="url">{{ post.data.title }}</a></h3>
         <p>
             {% if post.data.date %}
-            {{ publishedOn }}: 
+            {{ publishedOn }}:
             <time datetime="{{ post.data.date | isodate }}" property="datePublished">
                 {{ post.data.date | localdate }}
             </time>

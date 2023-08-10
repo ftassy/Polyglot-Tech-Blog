@@ -1,0 +1,41 @@
+<div class="card" typeof="BlogPosting" resource="{{ [data.baseUrl, post.url] | join | url }}">
+    <header>
+        <h2 property="headline">
+            <a href="{{ post.url | url }}" property="url">{{ post.data.title }}</a>
+        </h2>
+        <div>
+            {% if post.data.author %}
+            <div class="author">
+                {{ writtenBy }}:
+                <span property="author" typeof="Person"{% if data.authorUri %}resource="{{ data.authorUri }}"{% endif %}>
+                    <span property="name">
+                        {{ post.data.author }}
+                    </span>
+                </span>
+            </div>
+            {% endif %}
+            {% if post.data.date %}
+            {{ publishedOn }}: <time datetime="{{ post.data.date | isodate }}" property="datePublished">{{
+                post.data.date
+                | localdate }}</time>
+            {% endif %}
+        </div>
+        {% for tag in post.data.tags %}
+        {% if tag != "post" and tag != post.data.lang %}
+        <span class="chip is-small" property="keywords">
+            <a href="{{ [lang, 'tags', tag] | join('/') | url }}">
+                {{ tag }}
+            </a>
+        </span>
+        {% endif %}
+        {% endfor %}
+    </header>
+    <p property="abstract">
+        <a href="{{ post.url | url }}" style="text-decoration: none;">
+            {{ post.data.description }}
+        </a>
+    </p>
+    <footer class="is-left">
+        <a href="{{ post.url | url }}" class="button">{{ read }}</a>
+    </footer>
+</div>

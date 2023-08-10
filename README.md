@@ -2,7 +2,7 @@
 
 # Polyglot Tech Blog
 
-A 11ty starter project for multilingual personal pages and blogs :
+An 11ty starter project for multilingual personal pages and blogs :
 * Powered by [11ty static site generator](https://www.11ty.dev/)
 * Styling :
     * Supports [SASS](https://sass-lang.com)
@@ -22,6 +22,22 @@ A 11ty starter project for multilingual personal pages and blogs :
 4. Visit http://localhost:8080 to see your work-in-progress
 5. Do your things and see your changes instantly!
 6. When you’re projet is ready, deploy easily on GItHub Pages, GitLab Pages, Netlify or manually on a server.
+
+## Check the code validity
+
+Here are some random page checks with well known tools.  
+
+### RSS feeds with [W3C Feed Validation Service](https://validator.w3.org/feed/)  
+[English RSS feed](https://validator.w3.org/feed/check.cgi?url=https%3A%2F%2Fpolyglot-tech-blog.netlify.app%2Fen%2Ffeed.xml)  
+[French RSS feed](https://validator.w3.org/feed/check.cgi?url=https%3A%2F%2Fpolyglot-tech-blog.netlify.app%2Ffr%2Ffeed.xml)  
+
+### i18n with [W3C Internationalization Checker](https://validator.w3.org/i18n-checker/)  
+[English blog page](https://validator.w3.org/i18n-checker/check?uri=https%3A%2F%2Fpolyglot-tech-blog.netlify.app%2Fen%2Fblog%2F#validate-by-uri+)  
+[French home page](https://validator.w3.org/i18n-checker/check?uri=https%3A%2F%2Fpolyglot-tech-blog.netlify.app%2Ffr%2F#validate-by-uri+)  
+
+### Semantic web with [Schema.org validator](https://validator.schema.org)  
+[English "about" page](https://validator.schema.org/#url=https%3A%2F%2Fpolyglot-tech-blog.netlify.app%2Fen%2Fabout%2F)  
+[French "add language" post](https://validator.schema.org/#url=https%3A%2F%2Fpolyglot-tech-blog.netlify.app%2Ffr%2Fblog%2Fadd-language%2F)  
 
 ## Credits
 

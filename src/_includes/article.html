@@ -1,50 +1,60 @@
 <!DOCTYPE html>
 <html lang="{{ lang }}">
 
-  <head>
-  {% include "components/meta.html" %}
-    <title>{{ title }}</title>
-    <link {% if data.languages[0] === lang %}id="default-lang"{% endif %} rel="alternate" hreflang="{{ lang }}" href="{{ [data.baseUrl, page.url] | join }}">
-    {% for link in page.url | locale_links %}
-    <link {% if data.languages[0] === link.lang %}id="default-lang"{% endif %} rel="alternate" hreflang="{{ link.lang }}" href="{{ [data.baseUrl, link.url] | join }}">
-    {% endfor %}
-    <meta name="description" content="{{ description }}">
-    <meta name="keywords" content="{{ data.keywords[lang] }},{{ tags | join(', ') }}">
-    <meta name="author" content="{{ author }}">
-  </head>
+    <head>
+        {% include "components/meta.html" %}
+        <title>{{ title }}</title>
+        <link {% if data.languages[0]===lang %}id="default-lang" {% endif %} rel="alternate" hreflang="{{ lang }}"
+              href="{{ [data.baseUrl, page.url] | join }}">
+        {% for link in page.url | locale_links %}
+        <link {% if data.languages[0]===link.lang %}id="default-lang" {% endif %} rel="alternate"
+              hreflang="{{ link.lang }}" href="{{ [data.baseUrl, link.url] | join }}">
+        {% endfor %}
+        <meta name="description" content="{{ description }}">
+        <meta name="keywords" content="{{ data.keywords[lang] }},{{ tags | join(', ') }}">
+        <meta name="author" content="{{ author }}">
+    </head>
 
-  <body id="nightModeDiv" vocab="https://schema.org/">
-    {% include "components/navbar.html" %}
-    <main>
-      <article class="container" typeof="BlogPosting">
-         <header>
-          <h1 property="headline">{{title}}</h1>
-          <div>
-            {% if author %}
-            <div class="author" property="author" typeof="Person"{% if data.authorUri %}resource="{{ data.authorUri }}"{% endif %}>
-              <span property="name">{{ author }}</span>
-            </div>
-            {% endif %}
-            {% if date %}
-            <time datetime="{{ date | isodate }}" property="datePublished">{{ date | localdate }}</time>
-            {% endif %}
-            {% if update %}
-            - {{ updatedOn }} <time datetime="{{ update | isodate }}" property="dateModified">{{ update | localdate }}</time>
-            {% endif %}
-          </div>
-          {% for tag in tags %}
-          {% if tag != "post" and tag != lang %}
-          <span class="chip is-small"><a href="{{ [data.baseUrl, lang, 'tags', tag] | join('/') }}" property="keywords" typeof="Text"><span>{{ tag }}</span></a></span>
-          {% endif %}
-          {% endfor %}
-        </header>
-        <div property="abstract">{{ description }}</div>
-        <section class="paragraph text-lg" property="articleBody">{{ content | safe }}</section>
-      </article>
-    </main>
-    {% include "components/footer.html" %}
-    {% include "components/scripts.html" %}
+    <body id="nightModeDiv" vocab="https://schema.org/">
+        {% include "components/navbar.html" %}
+        <main>
+            <article class="container" typeof="BlogPosting">
+                <header>
+                    <h1 property="headline">{{title}}</h1>
+                    <div>
+                        {% if author %}
+                        <div class="author" property="author" typeof="Person" {% if data.authorUri
+                             %}resource="{{ data.authorUri }}" {% endif %}>
+                            <span property="name">{{ author }}</span>
+                        </div>
+                        {% endif %}
+                        {% if date %}
+                        <time datetime="{{ date | isodate }}" property="datePublished">{{ date | localdate }}</time>
+                        {% endif %}
+                        {% if update %}
+                        - {{ updatedOn }} <time datetime="{{ update | isodate }}" property="dateModified">{{ update |
+                            localdate }}</time>
+                        {% endif %}
+                    </div>
+                    {% for tag in tags %}
+                    {% if tag != "post" and tag != lang %}
+                    <span class="chip is-small" property="keywords">
+                        <a href="{{ [lang, 'tags', tag] | join('/') }}" typeof="Text">
+                            <span>
+                                {{ tag }}
+                            </span>
+                        </a>
+                    </span>
+                    {% endif %}
+                    {% endfor %}
+                </header>
+                <div property="abstract">{{ description }}</div>
+                <section class="paragraph text-lg" property="articleBody">{{ content | safe }}</section>
+            </article>
+        </main>
+        {% include "components/footer.html" %}
+        {% include "components/scripts.html" %}
 
-  </body>
+    </body>
 
 </html>

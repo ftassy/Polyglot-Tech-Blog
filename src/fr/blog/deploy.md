@@ -4,7 +4,7 @@ description: Notre Polyglot Tech Blog est fin-prêt. Voyons quelques manières d
 date: 2023-06-11T12:00:00
 author: Florent Tassy
 tags: 
-    - déploiement
+    - deploiement
     - GitLab
     - Netlify
     - GitHub
