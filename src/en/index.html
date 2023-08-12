@@ -6,14 +6,81 @@ layout: "base.html"
 <div class="container">
     <div class="row">
         <div class="col">
-            <h1>Welcome</h1>
+            <h1>Polyglot Tech Blog</h1>
+            <p>Polyglot Tech Blog is an 11ty starter project for multilingual personal pages and blogs</p>
+
+            <h2>How you can use it</h2>
+            <ol>
+                <li>
+                    <p>If not already done, install <a href="https://nodejs.org/en/download">Node.js</a></p>
+                </li>
+                <li>
+                    <p>Clone the <a href="https://gitlab.com/florent_tassy/polyglot-tech-blog">repository</a> with <code
+                              data-backticks="1">git clone https://gitlab.com/florent_tassy/polyglot-tech-blog.git</code>
+                        or <a
+                           href="https://gitlab.com/florent_tassy/polyglot-tech-blog/-/archive/main/polyglot-tech-blog-main.zip">download</a>
+                        and unzip the repository content</p>
+                </li>
+                <li>
+                    <p>Install dependencies: <code data-backticks="1">npm ci</code></p>
+                </li>
+                <li>
+                    <p>Start development: <code data-backticks="1">npm run dev</code></p>
+                </li>
+                <li>
+                    <p>Visit http://localhost:8080 to see your work-in-progress</p>
+                </li>
+                <li>
+                    <p>Do your things and see your changes instantly!</p>
+                </li>
+                <li>
+                    <p>When your projet is ready, deploy easily on GitHub Pages, GitLab Pages, Netlify or manually on
+                        a server.</p>
+                </li>
+            </ol>
+            <h2>Check the code validity</h2>
+            <p>Here are some random page checks with well known tools.</p>
+            <h3>RSS feeds with <a href="https://validator.w3.org/feed/">W3C Feed Validation Service</a></h3>
             <p>
-                This is a template for building a simple blog website with the <a href="https://www.11ty.dev/"
-                   target="_blank">Eleventy</a> static site generator. This template derives from
-                <a href="https://github.com/NikitaZanella/11ty-SASS" target="_blank">Nikita Zanella's 11ty-SASS</a>.
-                View the project repo on <a href="https://gitlab.com/florent_tassy/polyglot-tech-blog"
-                   target="_blank">GitLab</a>.
+                <a
+                   href="https://validator.w3.org/feed/check.cgi?url={{ [data.baseUrl, en, feed.xml].join('/') | encodeURIComponent }}">English
+                    RSS feed
+                </a>
+                <br>
+                <a
+                   href="https://validator.w3.org/feed/check.cgi?url=https%3A%2F%2Fpolyglot-tech-blog.netlify.app%2Ffr%2Ffeed.xml">French
+                    RSS feed
+                </a>
             </p>
+            <h3>i18n with <a href="https://validator.w3.org/i18n-checker/">W3C Internationalization Checker</a></h3>
+            <p>
+                <a
+                   href="https://validator.w3.org/i18n-checker/check?uri=https%3A%2F%2Fpolyglot-tech-blog.netlify.app%2Fen%2Fblog%2F#validate-by-uri+">English
+                    blog page
+                </a>
+                <br>
+                <a
+                   href="https://validator.w3.org/i18n-checker/check?uri=https%3A%2F%2Fpolyglot-tech-blog.netlify.app%2Ffr%2F#validate-by-uri+">French
+                    home page
+                </a>
+            </p>
+            <h3>Semantic web with <a href="https://validator.schema.org">Schema.org validator</a></h3>
+            <p>
+                <a href="https://validator.schema.org/#url=https%3A%2F%2Fpolyglot-tech-blog.netlify.app%2Fen%2Fabout%2F">English
+                    "about" page
+                </a>
+                <br>
+                <a
+                   href="https://validator.schema.org/#url=https%3A%2F%2Fpolyglot-tech-blog.netlify.app%2Ffr%2Fblog%2Fadd-language%2F">French
+                    "add language" post
+                </a>
+            </p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <h2>Features</h2>
         </div>
     </div>
 
@@ -32,7 +99,8 @@ layout: "base.html"
                 <header>
                     <h2>11ty static site generator</h2>
                 </header>
-                <p>Powered by simple and fast <a href="https://www.11ty.dev/" target="_blank">Eleventy</a> static site
+                <p>Powered by simple and fast <a typeof="SoftwareApplication" href="https://www.11ty.dev/"
+                       target="_blank"><span property="name">Eleventy</span></a> static site
                     generator
                 </p>
             </div>
@@ -75,6 +143,25 @@ layout: "base.html"
                     <h2>Multilingual</h2>
                 </header>
                 <p>Default to user's browser language, can be manually overriden</p>
+            </div>
+
+        </div>
+        <div class="col">
+
+            <div class="card stretch-height">
+                <span class="is-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100" fill="var(--color-primary)" viewBox=" 0 0 24 24">
+                        <path
+                              d="M12.9 4.22C18.73 6.84 20 2 20 2s-1.11 6.07-6.21 8.55c-1.04.51-1.69.78-1.69.78L3.73 7.25l8.37-3.43s-.2-.06.8.4M11.12 22l-7.79-4.22V9.07l7.79 3.97V22m1.76 0l7.8-4.22V9.07l-7.8 3.97V22Z" />
+                    </svg>
+                </span>
+                <header>
+                    <h2>Semantic</h2>
+                </header>
+                <p>
+                    Uses <a typeof="WebSite" href="http://www.w3.org/TR/rdfa-primer/"><span property="headline">RDFa</span></a> and <a typeof="WebSite"
+                       href="https://schema.org/"><span property="headline">Schema.org</span></a> vocabulary to structure its content</p>
+                </p>
             </div>
 
         </div>

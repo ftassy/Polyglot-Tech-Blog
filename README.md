@@ -21,7 +21,7 @@ An 11ty starter project for multilingual personal pages and blogs :
 3. Start development: `npm run dev`
 4. Visit http://localhost:8080 to see your work-in-progress
 5. Do your things and see your changes instantly!
-6. When you’re projet is ready, deploy easily on GItHub Pages, GitLab Pages, Netlify or manually on a server.
+6. When your projet is ready, deploy easily on GitHub Pages, GitLab Pages, Netlify or manually on a server.
 
 ## Check the code validity
 
@@ -42,7 +42,7 @@ Here are some random page checks with well known tools.
 ## Credits
 
 Beside above-mentionned dependencies, this project also uses :
-* Derived from [Nikita Zanella's 11ty-SASS](https://github.com/NikitaZanella/11ty-SASS) starter
+* A code base derived from [Nikita Zanella's 11ty-SASS](https://github.com/NikitaZanella/11ty-SASS) starter
 * Icons from [https://jam-icons.com/](https://jam-icons.com/) and [https://simpleicons.org/](https://simpleicons.org/) found on [icongram](https://icongr.am/)
 * A logo derived from [inipagi](http://inipagi.com/)'s one and found on [Icon finder](https://www.iconfinder.com/icons/2620514/employee_job_laptop_seeker_unemployee_work_icon)
 * A profile picture derived from [Open Clipart](https://openclipart.org/detail/236739/friendly-kitten-icon)
