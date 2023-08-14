@@ -48,11 +48,6 @@ module.exports = function (eleventyConfig) {
         return date.substring(0, date.lastIndexOf('.'));
     });
 
-    // Convert de string into a URI component e.g. changin / with %2F...
-    eleventyConfig.addFilter("encodeURIComponent", function (string) {
-        return encodeURIComponent(string);
-    });
-
     // Minify HTML
     eleventyConfig.addTransform("htmlmin", function (content) {
         if (this.page.outputPath && this.page.outputPath.endsWith(".html")) {
