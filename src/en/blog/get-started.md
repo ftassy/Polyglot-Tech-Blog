@@ -63,6 +63,15 @@ The first customisation that you will probably want to bring is changing the con
     // one. At least one is needed.
     "languages": [ "en", "fr" ],
 
+    // Language labels. 
+    // All above declared codes 
+    // must have a corresponding 
+    // entry here.
+    "languageLabels": {
+        "en": "English",
+        "fr": "Français"
+    },
+
     // Blog title. 
     // All above declared codes 
     // must have a corresponding 

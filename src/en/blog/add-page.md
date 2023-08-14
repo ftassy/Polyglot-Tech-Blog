@@ -78,7 +78,6 @@ And finally, the `{{ "{{ porfolio }}" }}` references a variable that must be add
 ```diff-json
 {
     "lang": "fr",
-    "langLabel": "Français",
     "home": "Accueil",
     "blog": "Blog",
     "about": "À propos",
@@ -95,7 +94,6 @@ And finally, the `{{ "{{ porfolio }}" }}` references a variable that must be add
 ```diff-json
 {
     "lang": "en",
-    "langLabel": "English",
     "home": "Home",
     "blog": "Blog",
     "about": "About",

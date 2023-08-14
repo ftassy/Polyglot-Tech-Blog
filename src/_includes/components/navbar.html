@@ -30,7 +30,7 @@
                             <span class="is-center text-success" property="inLanguage" typeof="Language" {% if
                                   data.languageUris[lang] %}resource="{{ data.languageUris[lang] }}" {% endif %}>
                                 <span hidden property="alternateName">{{ lang }}</span>
-                                <span property="name">{{ langLabel }}</span>
+                                <span property="name">{{ data.languageLabels[lang] }}</span>
                             </span>
                             {% for link in page.url | locale_links %}
                             <span property="inLanguage" typeof="Language" {% if data.languageUris[lang]
@@ -39,7 +39,7 @@
                                       lang="{{ link.lang }}">{{ link.lang }}</span>
                                 <a href="{{ link.url | url }}" property="url">
                                     <span property="name" xml:lang="{{ link.lang }}" lang="{{ link.lang }}">{{
-                                        link.label }}</span>
+                                        data.languageLabels[link.lang] }}</span>
                                 </a>
                             </span>
                             {% endfor %}
