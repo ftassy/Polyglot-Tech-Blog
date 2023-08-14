@@ -15,6 +15,7 @@
                     <a href="{{ '/about' | locale_url | url }}">{{ about }}</a>
                     <a href="{{ '/blog' | locale_url | url }}">{{ blog }}</a>
                     <!-- Language selector -->
+                    {% if lang %}
                     <details class="dropdown">
                         <summary class="button icon-only">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 24 24" width="24"
@@ -45,6 +46,7 @@
                             {% endfor %}
                         </div>
                     </details>
+                    {% endif %}
                     <!-- Dark / light mode switcher -->
                     <div id="nightModeWrapper">
                         <button id="nightModeButton" class="button icon-only" title="Color schema switch"
