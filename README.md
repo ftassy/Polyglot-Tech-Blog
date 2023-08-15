@@ -41,7 +41,7 @@ Here are some random page checks with well known tools.
 
 ## Credits
 
-Beside above-mentionned dependencies, this project also uses :
+Beside the above-mentionned dependencies, this project also uses:
 * A code base derived from [Nikita Zanella's 11ty-SASS](https://github.com/NikitaZanella/11ty-SASS) starter
 * Icons from [https://jam-icons.com/](https://jam-icons.com/) and [https://simpleicons.org/](https://simpleicons.org/) found on [icongram](https://icongr.am/)
 * A logo derived from [inipagi](http://inipagi.com/)'s one and found on [Icon finder](https://www.iconfinder.com/icons/2620514/employee_job_laptop_seeker_unemployee_work_icon)

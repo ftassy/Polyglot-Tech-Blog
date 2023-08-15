@@ -51,7 +51,7 @@ The first customisation that you will probably want to bring is changing the con
     "author": "Florent Tassy",
 
     // Optional, but nice for semantic
-    // web : the unique URI that 
+    // web: the unique URI that 
     // identifies the author. Avoid
     // using a URL of the blog or you
     // may get weird ID associations.
@@ -82,7 +82,7 @@ The first customisation that you will probably want to bring is changing the con
     },
 
     // Optional, but nice for semantic
-    // web : the URIs that identify
+    // web: the URIs that identify
     // the blog languages. 
     // http://lexvo.org and 
     // https://dbpedia.org provides

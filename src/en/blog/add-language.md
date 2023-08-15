@@ -49,7 +49,7 @@ Simply add the new language:
 
 ## Create the language directory
 
-The simplest first step here is probably to copy an existing language directory, let's say "en", paste it into the src directory, and rename it to the language code you want. Here, we will the rename to directory "de". So we get this strusture :  
+The simplest first step here is probably to copy an existing language directory, let's say "en", paste it into the src directory, and rename it to the language code you want. Here, we will the rename to directory "de". So we get this strusture:  
 
 ```plain
 src
@@ -110,4 +110,4 @@ If you want to change the blog default language, please also update the "default
 
 ## Conclusion
 
-That's it, we have added a new language to our webpage ! More information on [11ty i18n documentation](https://www.11ty.dev/docs/i18n/)
+That's it, we have added a new language to our webpage! More information on [11ty i18n documentation](https://www.11ty.dev/docs/i18n/)
