@@ -7,9 +7,13 @@ layout: "base.html"
     <div class="row">
         <div class="col">
             <h1>Polyglot Tech Blog</h1>
-            <p>Polyglot Tech Blog is an <a typeof="SoftwareApplication" href="https://www.11ty.dev/"
-                    target="_blank"><span property="name">Eleventy</span></a> starter project for multilingual personal
-                pages and blogs</p>
+            <p>Polyglot Tech Blog is an
+                <a typeof="SoftwareApplication" href="https://www.11ty.dev/" target="_blank">
+                    <span property="name">
+                        Eleventy</span></a>
+                starter project for multilingual personal
+                pages and blogs
+            </p>
 
             <h2>Usage</h2>
             <ol>
@@ -28,7 +32,7 @@ layout: "base.html"
                     <p>Install dependencies: <code data-backticks="1">npm ci</code></p>
                 </li>
                 <li>
-                    <p>Start development: <code data-backticks="1">npm run dev</code></p>
+                    <p>Start development server: <code data-backticks="1">npm run dev</code></p>
                 </li>
                 <li>
                     <p>Visit http://localhost:8080 to see your work-in-progress</p>
@@ -37,13 +41,13 @@ layout: "base.html"
                     <p>Do your things and see your changes instantly!</p>
                 </li>
                 <li>
-                    <p>When your projet is ready, deploy easily on GitHub Pages, GitLab Pages, Netlify or manually on
-                        a server.</p>
+                    <p>When your projet is ready, deploy easily on GitHub Pages, GitLab Pages, Netlify or manually.</p>
                 </li>
             </ol>
             <h2>Check the code</h2>
             <p>Here are some random page checks with well known tools.</p>
-            <h3>RSS feeds with <a typeof="SoftwareApplication" href="https://validator.w3.org/feed/"><span property="name">W3C Feed Validation Service</span></a></h3>
+            <h3>RSS feeds with <a typeof="SoftwareApplication" href="https://validator.w3.org/feed/"><span
+                        property="name">W3C Feed Validation Service</span></a></h3>
             <p>
                 <a href="https://validator.w3.org/feed/check.cgi?url={{ [data.baseUrl, 'en', 'feed.xml'].join('/') }}/">English
                     RSS feed
@@ -53,7 +57,8 @@ layout: "base.html"
                     RSS feed
                 </a>
             </p>
-            <h3>i18n with <a typeof="SoftwareApplication" href="https://validator.w3.org/i18n-checker/"><span property="name">W3C Internationalization Checker</span></a></h3>
+            <h3>i18n with <a typeof="SoftwareApplication" href="https://validator.w3.org/i18n-checker/"><span
+                        property="name">W3C Internationalization Checker</span></a></h3>
             <p>
                 <a
                     href="https://validator.w3.org/i18n-checker/check?uri={{ [data.baseUrl, 'en', 'blog'].join('/') }}/#validate-by-uri+">English
@@ -65,7 +70,9 @@ layout: "base.html"
                     home page
                 </a>
             </p>
-            <h3>Semantic web with <span typeof="SoftwareApplication" resource="https://validator.schema.org#"><a property="url" href="https://validator.schema.org"><span property="name">Schema.org validator</span></a></span></h3>
+            <h3>Semantic web with <span typeof="SoftwareApplication" resource="https://validator.schema.org#"><a
+                        property="url" href="https://validator.schema.org"><span property="name">Schema.org
+                            validator</span></a></span></h3>
             <p>
                 <a href="https://validator.schema.org/#url={{ [data.baseUrl, 'en', 'about'].join('/') }}/">English
                     "about" page
@@ -101,8 +108,7 @@ layout: "base.html"
                     <h2><span resource="https://www.11ty.dev/"><span property="alternativeHeadline">11ty</span></span>
                         static site generator</h2>
                 </header>
-                <p>Powered by simple and fast <a href="https://www.11ty.dev/"
-                        target="_blank">Eleventy</a> static site
+                <p>Powered by simple and fast <a href="https://www.11ty.dev/" target="_blank">Eleventy</a> static site
                     generator
                 </p>
             </div>
@@ -152,30 +158,6 @@ layout: "base.html"
 
             <div class="card stretch-height">
                 <span class="is-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="100" fill="var(--color-primary)"
-                        viewBox=" 0 0 24 24">
-                        <path
-                            d="M12.9 4.22C18.73 6.84 20 2 20 2s-1.11 6.07-6.21 8.55c-1.04.51-1.69.78-1.69.78L3.73 7.25l8.37-3.43s-.2-.06.8.4M11.12 22l-7.79-4.22V9.07l7.79 3.97V22m1.76 0l7.8-4.22V9.07l-7.8 3.97V22Z" />
-                    </svg>
-                </span>
-                <header>
-                    <h2>Semantic</h2>
-                </header>
-                <p>
-                    Uses <a typeof="WebSite" href="http://www.w3.org/TR/rdfa-primer/"><span
-                            property="headline">RDFa</span></a> and <a typeof="WebSite" href="https://schema.org/"><span
-                            property="headline">Schema.org</span></a> vocabulary to structure its content</p>
-                </p>
-            </div>
-
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col">
-
-            <div class="card stretch-height">
-                <span class="is-center">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 24 24" fill="var(--color-primary)"
                         width="100">
                         <path
@@ -189,6 +171,30 @@ layout: "base.html"
                 <p>Thanks to <a typeof="WebSite" href="https://www.11ty.dev/docs/plugins/syntaxhighlight/"
                         target="_blank">Eleventy</a>
                     and <a typeof="WebSite" href="https://prismjs.com/"><span property="headline">Prism</span></a>
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+
+            <div class="card stretch-height">
+                <span class="is-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100" fill="var(--color-primary)"
+                        viewBox=" 0 0 24 24">
+                        <path
+                            d="M12.9 4.22C18.73 6.84 20 2 20 2s-1.11 6.07-6.21 8.55c-1.04.51-1.69.78-1.69.78L3.73 7.25l8.37-3.43s-.2-.06.8.4M11.12 22l-7.79-4.22V9.07l7.79 3.97V22m1.76 0l7.8-4.22V9.07l-7.8 3.97V22Z" />
+                    </svg>
+                </span>
+                <header>
+                    <h2>Semantic</h2>
+                </header>
+                <p>
+                    Uses <a typeof="WebSite" href="http://www.w3.org/TR/rdfa-primer/"><span
+                            property="headline">RDFa</span></a> and <a typeof="WebSite" href="https://schema.org/"><span
+                            property="headline">Schema.org</span></a> vocabulary to structure its content</p>
                 </p>
             </div>
 
@@ -207,7 +213,8 @@ layout: "base.html"
                 <header>
                     <h2>Easy to skin</h2>
                 </header>
-                <p>Includes <a typeof="WebSite "href="https://jenil.github.io/chota"><span property="headline">Chota CSS micro framework</span></a> and processes both
+                <p>Includes <a typeof="WebSite " href="https://jenil.github.io/chota"><span property="headline">Chota
+                            CSS micro framework</span></a> and processes both
                     SASS and
                     CSS</p>
             </div>
