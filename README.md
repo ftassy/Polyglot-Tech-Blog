@@ -2,9 +2,9 @@
 
 # Polyglot Tech Blog
 
-An 11ty starter project for multilingual personal pages and blogs :
+An 11ty starter project for multilingual personal pages and blogs:
 * Powered by [11ty static site generator](https://www.11ty.dev/)
-* Styling :
+* Styling:
     * Supports [SASS](https://sass-lang.com)
     * Includes [Chota micro CSS framework](https://jenil.github.io/chota)
     * Easy to include any other CSS library
@@ -48,4 +48,4 @@ Beside the above-mentionned dependencies, this project also uses:
 * A profile picture derived from [Open Clipart](https://openclipart.org/detail/236739/friendly-kitten-icon)
 
 
-Enjoy !
+Enjoy!
