@@ -85,7 +85,7 @@ Vous pouvez maintenant vous connecter à Netlify et glisser-déposer le réperto
 
 ## Déploiement sur GitHub Pages
 
-Le modèle propose un fichier `.github > workflows > build-and-deploy.yml` qui devrait déployer le blog correctement. Vous avez seulement besoin d'adapter le fichier `github-pages.js` file:  
+Le modèle propose un fichier `.github > workflows > build-and-deploy.yml` qui devrait déployer le blog correctement. Vous avez seulement besoin d'adapter le fichier `github-pages.js` :  
 
 ```js
 module.exports = { 
@@ -94,7 +94,7 @@ module.exports = {
 };
 ```
 
-"Poussez" ensuite le dépôt sur GitHub. Si le dépôt distant est correctement configuré, la pipeline de CI/CD va déployer le blog.
+"Poussez" ensuite le code sur GitHub. Si le dépôt distant est correctement configuré, la pipeline de CI/CD va déployer le blog.
 
 ## Conclusion
 
