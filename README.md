@@ -14,7 +14,7 @@ An 11ty starter project for multilingual personal pages and blogs :
 * Syntax highlight with [Prism](https://prismjs.com/) and [11ty Syntax Highlighting Plugin](https://www.11ty.dev/docs/plugins/syntaxhighlight/) (that's why it's called "tech" 😉)
 * Support posts and tags (that's why it's called "blog" 😉)
 
-## How you can use it
+## Usage
 1. If not already done, install [Node.js](https://nodejs.org/en/download)
 1. Clone the [repository](https://gitlab.com/florent_tassy/polyglot-tech-blog) with `git clone https://gitlab.com/florent_tassy/polyglot-tech-blog.git` or [download](https://gitlab.com/florent_tassy/polyglot-tech-blog/-/archive/main/polyglot-tech-blog-main.zip) and unzip the repository content
 2. Install dependencies: `npm ci`
@@ -23,7 +23,7 @@ An 11ty starter project for multilingual personal pages and blogs :
 5. Do your things and see your changes instantly!
 6. When your projet is ready, deploy easily on GitHub Pages, GitLab Pages, Netlify or manually on a server.
 
-## Check the code validity
+## Check the code
 
 Here are some random page checks with well known tools.  
 
