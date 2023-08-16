@@ -4,22 +4,68 @@ layout: "base.html"
 ---
 
 <div class="container">
-  <div class="row">
-    <div class="col-8">
-      <h1>À propos</h1>
-      <div>
-        Ceci est un modèle initial pour construire un site et blog multilingue avec le générateur de site statique <a href="https://www.11ty.dev/"
-           target="_blank">Eleventy</a>.
-        Allez voir le dépôt sur <a href="https://gitlab.com/florent_tassy/polyglot-tech-blog" target="_blank">GitLab</a>.
-      </div>
-    </div>
+    <div class="row">
+        <div class="col-8">
+            <h1>À propos</h1>
+            <p>
+                Polyglot Tech Blog est un modèle initial pour construire un site et blog multilingue avec le générateur
+                de site
+                statique <a typeof="SoftwareApplication" href="https://www.11ty.dev/" target="_blank"><span
+                        property="name">Eleventy</span></a>.
+                Allez voir le dépôt sur <a href="https://gitlab.com/florent_tassy/polyglot-tech-blog"
+                    target="_blank">GitLab</a>.
+            </p>
+            <h2>Crédits</h2>
+            <p>En plus des dépendances déjà mentionnées, ce projet utilise :</p>
+            <ul>
+                <li>
+                    <p>
+                        Une base de code dérivée du modèle
+                        <span typeof="SoftwareSourceCode">
+                            <a href="https://github.com/NikitaZanella/11ty-SASS" property="codeRepository">
+                                11ty-SASS
+                            </a>
+                            de <span typeof="Person" resource="https://github.com/NikitaZanella/">
+                                <span property="name">
+                                    Nikita Zanella
+                                </span>
+                            </span>
+                        </span>
+                    </p>
+                </li>
+                <li>
+                    <p>Des icônes de <a href="https://jam-icons.com/">https://jam-icons.com/</a> et <a
+                            href="https://simpleicons.org/">https://simpleicons.org/</a> trouvées sur <a
+                            href="https://icongr.am/">icongram</a></p>
+                </li>
+                <li>
+                    <p>Un logo dérivé de celui d'
+                        <span typeof="Person" resource="http://inipagi.com/">
+                            <a href="http://inipagi.com/">
+                                <span property="name">
+                                    inipagi
+                                </span>
+                            </a>
+                        </span> et trouvé sur <a typeof="WebPage"
+                            href="https://www.iconfinder.com/icons/2620514/employee_job_laptop_seeker_unemployee_work_icon">Icon
+                            finder</a>
+                    </p>
+                </li>
+                <li>
+                    <p>Une photo de profil dérivée d'<a typeof="WebPage"
+                            href="https://openclipart.org/detail/236739/friendly-kitten-icon">Open
+                            Clipart</a></p>
+                </li>
+            </ul>
+            <p>Amusez-vous bien !</p>
+        </div>
 
-    <div class="col-4" style="padding: 2rem;">
-      {% include "components/bio.html" %}
-      <hr style="background-color: transparent">
-      {% include "components/latest-posts.html" %}
-    </div>
+        <div class="col-4" style="padding: 2rem;">
+            {% include "components/bio.html" %}
+            <hr style="background-color: transparent">
+            {% include "components/latest-posts.html" %}
+        </div>
 
-  </div>
+    </div>
 
 </div>

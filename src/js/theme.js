@@ -52,7 +52,7 @@ const darkModeHandler = () => {
 };
 
 // Dark Moda State Handler => check if a 'darkMode' local store exist. 
-// If exists and its value is "1", activate darkMode, f exists and 
+// If exists and its value is "1", activate darkMode, if exists and 
 // its value is "0", does nothing, if not exists, a localStorage called 
 // 'darkMode' and assign 0 or 1 depending on the browser 
 // prefers-color-scheme media query.
@@ -73,7 +73,11 @@ const darkModeState = () => {
     }
 };
 
-// Adapt 
+// Initialize theme and listen to theme changes
+if (localStorage.getItem("darkMode") == "0") {
+    nightModeDiv.classList.remove("dark-theme");
+    switchLinkToCssHighlight("light"); 
+}
 nightModeButton.addEventListener("click", darkModeHandler);
 nightModeDiv.addEventListener("load", darkModeState());
 lightModePreference.addEventListener("change", e => {

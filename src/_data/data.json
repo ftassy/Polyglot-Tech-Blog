@@ -2,6 +2,10 @@
     "author": "Florent Tassy",
     "authorUri": "https://gitlab.com/florent_tassy",
     "languages": [ "en", "fr" ],
+    "languageLabels": {
+        "en": "English",
+        "fr": "Français"
+    },
     "languageUris": {
         "en": "http://dbpedia.org/resource/English_language",
         "fr": "http://dbpedia.org/resource/French_language"

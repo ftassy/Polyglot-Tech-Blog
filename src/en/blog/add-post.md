@@ -1,6 +1,6 @@
 ---
 title: Add a post
-description: "We are now going to make the most basic thing expected from a blog: adding a post !"
+description: "We are now going to make the most basic thing expected from a blog: adding a post!"
 date: 2023-06-23T12:00:00
 author: Florent Tassy
 tags: 
@@ -14,7 +14,7 @@ A blog is basically made of a few static pages and many articles. Let's see then
 
 ## Create the files
 
-This is probably one of the easiest things to do with the template. When we want to add posts, we juste create a file with the **same name** in **every language directory**. Let's say I want to post about dolphins in Arctic in my English / French blog. I will add the two following files :  
+This is probably one of the easiest things to do with the template. When we want to add posts, we juste create a file with the **same name** in **every language directory**. Let's say I want to post about dolphins in Arctic in my English / French blog. I will add the two following files:  
 
 ```plain
 src
@@ -33,7 +33,7 @@ The suggested format here is [Markdown](https://en.wikipedia.org/wiki/Markdown),
 
 ## Add content to files
 
-In each newly added files, I can now add your content. But before all, the following front matter is expected :  
+In each newly added files, I can now add your content. But before all, the following front matter is expected:  
 
 ```plain
 title: Dolphins in Arctic (To be translated in the fr directory)
@@ -47,7 +47,7 @@ tags:
     - Arctic (to be translated in the fr directory)
 ```
 
-For the rest, please note that :
+For the rest, please note that:
 * Eleventy will automatically add a level one title from front matter. You will then have to add level two and lower titles to keep a valid HTML;
 * Should you wish to include a link to another blog article, let's say example.md, you could use the following syntax: `[hyperlink text]({{ '{{' }} '/blog/example' | locale_url | url {{ '}}' }})`;
 * Should you wish to include a link to a static blog resource (document, image...), you could use the following syntax: `![description de l'image]({{ '{{' }} '/img/image.png' | url {{ '}}' }})`.

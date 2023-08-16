@@ -15,6 +15,7 @@
                     <a href="{{ '/about' | locale_url | url }}">{{ about }}</a>
                     <a href="{{ '/blog' | locale_url | url }}">{{ blog }}</a>
                     <!-- Language selector -->
+                    {% if lang %}
                     <details class="dropdown">
                         <summary class="button icon-only">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 24 24" width="24"
@@ -25,12 +26,12 @@
                     3.419-.464 4.574-1.165C6.384 7.323 7.213 6.382 8.003 5H1z"></path>
                             </svg>
                         </summary>
-                        <div class="card" typeof="WebPage" resource="{{ page.url | locale_url | url }}">
+                        <div class="card" typeof="WebPage" resource="{{ page.url | locale_url | url }}#this">
                             <span hidden property="name">{{ data.title[lang] }}</span>
                             <span class="is-center text-success" property="inLanguage" typeof="Language" {% if
                                   data.languageUris[lang] %}resource="{{ data.languageUris[lang] }}" {% endif %}>
                                 <span hidden property="alternateName">{{ lang }}</span>
-                                <span property="name">{{ langLabel }}</span>
+                                <span property="name">{{ data.languageLabels[lang] }}</span>
                             </span>
                             {% for link in page.url | locale_links %}
                             <span property="inLanguage" typeof="Language" {% if data.languageUris[lang]
@@ -39,12 +40,13 @@
                                       lang="{{ link.lang }}">{{ link.lang }}</span>
                                 <a href="{{ link.url | url }}" property="url">
                                     <span property="name" xml:lang="{{ link.lang }}" lang="{{ link.lang }}">{{
-                                        link.label }}</span>
+                                        data.languageLabels[link.lang] }}</span>
                                 </a>
                             </span>
                             {% endfor %}
                         </div>
                     </details>
+                    {% endif %}
                     <!-- Dark / light mode switcher -->
                     <div id="nightModeWrapper">
                         <button id="nightModeButton" class="button icon-only" title="Color schema switch"
