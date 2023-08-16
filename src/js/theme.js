@@ -73,7 +73,7 @@ const darkModeState = () => {
     }
 };
 
-// Initialize theme and listento theme changes
+// Initialize theme and listen to theme changes
 if (localStorage.getItem("darkMode") == "0") {
     nightModeDiv.classList.remove("dark-theme");
     switchLinkToCssHighlight("light"); 
