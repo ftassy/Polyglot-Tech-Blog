@@ -16,13 +16,13 @@ Polyglot Tech Blog comes with three pages:
 * Blog, where all blog posts are listed
 ... as well as a 404 error page.
 
-<div>What if I want to add another static page ? Let's add a "portfolio" page to demonstrate it.</div>
+<div>What if I want to add another static page? Let's add a "portfolio" page to demonstrate it.</div>
 
 ## Add the files
 
 In each of your language directory, create a file "portfolio.html". This name must be the same accross all your language directories. The file name determines what the page URL will be. Here, it will be something like https://\<my-domain\>/\<language\>/portofio.html.  
 
-You should get the following structure :  
+You should get the following structure:  
 
 ```plain
 src
@@ -78,7 +78,6 @@ And finally, the `{{ "{{ porfolio }}" }}` references a variable that must be add
 ```diff-json
 {
     "lang": "fr",
-    "langLabel": "Français",
     "home": "Accueil",
     "blog": "Blog",
     "about": "À propos",
@@ -95,7 +94,6 @@ And finally, the `{{ "{{ porfolio }}" }}` references a variable that must be add
 ```diff-json
 {
     "lang": "en",
-    "langLabel": "English",
     "home": "Home",
     "blog": "Blog",
     "about": "About",

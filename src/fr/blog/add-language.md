@@ -26,6 +26,12 @@ Ajoutez simplement la nouvelle langue :
     // Other properties
 -   "languages": [ "en", "fr" ],
 +   "languages": [ "en", "fr", "de" ],
+    "languageLabels": {
+        "en": "English",
+-       "fr": "Français"
++       "fr": "Français",
++       "de": "Deutsch"
+    },
     "title": {
         "en": "English",
 -       "fr": "Français"
@@ -64,7 +70,6 @@ Tout d'abord, renommez le fichier en.json en de.json. Ensuite, ouvrez-le et mett
 ```json
 {
     "lang": "de",
-    "langLabel": "Deutsch",
     "home": "Startseite",
     "blog": "Blog",
     "about": "Über",

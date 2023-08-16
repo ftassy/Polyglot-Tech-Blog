@@ -67,6 +67,15 @@ La première personnalisation que vous voudrez apporter est certainement le chan
     // une.
     "languages": [ "en", "fr" ],
 
+    // Language labels. 
+    // All above declared codes 
+    // must have a corresponding 
+    // entry here.
+    "languageLabels": {
+        "en": "English",
+        "fr": "Français"
+    },
+    
     // Optionnel, mais un plus pour 
     // le web sémantique : les URIs
     // qui identifient les langues du
