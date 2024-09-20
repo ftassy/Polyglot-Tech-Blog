@@ -94,7 +94,7 @@ module.exports = {
 };
 ```
 
-Then push the repository on GitHub. If the remote repository is correctly configured, the CI/CD pipeline will deploy the blog.
+Then push the repository on GitHub. If the remote repository is correctly configured, the GitHub Action will deploy the blog.
 
 ## Conclusion
 
