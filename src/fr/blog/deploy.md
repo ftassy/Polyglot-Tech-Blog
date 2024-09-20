@@ -77,8 +77,8 @@ yarn clean # avec Yarn
 ```
 3. Empaquetez le blog prêt au déploiement
 ```bash
-npm run netlify:build # with npm
-yarn netlify:build # with Yarn
+npm run netlify:build # avec npm
+yarn netlify:build # avec Yarn
 ```
 
 Vous pouvez maintenant vous connecter à Netlify et glisser-déposer le répertoire `public`.  
@@ -94,7 +94,7 @@ module.exports = {
 };
 ```
 
-"Poussez" ensuite le code sur GitHub. Si le dépôt distant est correctement configuré, la pipeline de CI/CD va déployer le blog.
+"Poussez" ensuite le code sur GitHub. Si le dépôt distant est correctement configuré, la GitHub Action va déployer le blog.
 
 ## Conclusion
 

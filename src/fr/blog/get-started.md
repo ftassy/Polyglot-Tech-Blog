@@ -67,10 +67,10 @@ La première personnalisation que vous voudrez apporter est certainement le chan
     // une.
     "languages": [ "en", "fr" ],
 
-    // Language labels. 
-    // All above declared codes 
-    // must have a corresponding 
-    // entry here.
+    // Étiquettes des langues. 
+    // Tous les codes déclarés ci-dessus 
+    // doivent avoir une étiquette
+    // correspondante ici.
     "languageLabels": {
         "en": "English",
         "fr": "Français"
