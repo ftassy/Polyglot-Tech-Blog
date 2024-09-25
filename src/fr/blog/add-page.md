@@ -18,7 +18,7 @@ Polyglot Tech Blog contient trois pages :
 
 <div>Que faire si je souhaite ajouter une nouvelle page statique ? Ajoutons une page "Portefeuille" pour montrer comment faire.</div>
 
-## Add the files
+## Ajouter les fichiers
 
 Dans chacun de vos répertoires "langue", créez un fichier nommé "portfolio.html". TCe nom doit être le même dans tous vos répertoires "langue". Le nom d fichier détermine ce que sera l'URL de la page. Ici, ce sera quelque chose de la forme https://\<my-domain\>/\<language\>/portofio.html.  
 
@@ -56,7 +56,7 @@ layout: "base.html"
 
 👍 C'est fait, vous avez une nouvelle page statique !
 
-## Optionnel: AdAjoutez une entrée dans la barre de navigation
+## Optionnel: Ajouter une entrée dans la barre de navigation
 
 Cette étape est optionnelle. Si vous souhaitez avoir un lien vers la page portefeuille dans la barre de naviagtion, vous devez faire les modifications suivantes :  
 
@@ -65,13 +65,13 @@ Cette étape est optionnelle. Si vous souhaitez avoir un lien vers la page porte
 ```html
         <!-- Pages -->
         <div class="tabs">
-          <a href={{ "{{'/' | locale_url }}" }}>{{ "{{ home }}" }}</a>
-+         <a href={{ "{{'/' | locale_url }}portfolio" }}>{{ "{{ portfolio }}" }}</a>
-          <a href={{ "{{'/' | locale_url }}about" }}>{{ "{{ about }}" }}</a>
-          <a href={{ "{{'/' | locale_url }}blog" }}>{{ "{{ blog }}" }}</a>
+            <a href="{{ "{{ " }}'/'{{ " | locale_url | url }}" }}">{{ "{{ home }}" }}</a>
++           <a href="{{ "{{ " }}'/portfolio'{{ " | locale_url | url }}" }}">{{ "{{ portfolio }}" }}</a>
+            <a href="{{ "{{ " }}'/about'{{ " | locale_url | url }}" }}">{{ "{{ about }}" }}</a>
+            <a href="{{ "{{ " }}'/blog'{{ " | locale_url | url }}" }}">{{ "{{ blog }}" }}</a>
 ```
 
-Enfin, le `{{ porfolio }}` fait référence à une variable qui doit être ajoutée dans les fichiers en.json et fr.json :  
+Enfin, le `{{ "{{ portfolio }}" }}` fait référence à une variable qui doit être ajoutée dans les fichiers en.json et fr.json :  
 
 `src > fr > fr.json`:  
 
