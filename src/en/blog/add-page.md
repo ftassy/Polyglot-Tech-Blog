@@ -65,13 +65,13 @@ This step is optional. If you wish to have a link to your portfolio page in the 
 ```html
         <!-- Pages -->
         <div class="tabs">
-            <a href="\{\{ '/' | locale_url | url \}\}">{{ home }}</a>
-+           <a href="\{\{ '/portfolio' | locale_url | url \}\}">{{ "{{ portfolio }}" }}</a>
-            <a href="\{\{ '/about' | locale_url | url \}\}">{{ about }}</a>
-            <a href="\{\{ '/blog' | locale_url | url \}\}">{{ blog }}</a>
+            <a href="{{ "{{ " }}'/'{{ " | locale_url | url }}" }}">{{ "{{ home }}" }}</a>
++           <a href="{{ "{{ " }}'/portfolio'{{ " | locale_url | url }}" }}">{{ "{{ portfolio }}" }}</a>
+            <a href="{{ "{{ " }}'/about'{{ " | locale_url | url }}" }}">{{ "{{ about }}" }}</a>
+            <a href="{{ "{{ " }}'/blog'{{ " | locale_url | url }}" }}">{{ "{{ blog }}" }}</a>
 ```
 
-And finally, the `{{ "{{ porfolio }}" }}` references a variable that must be added to the en.json and fr.json files.  
+And finally, the `{{ "{{ portfolio }}" }}` references a variable that must be added to the en.json and fr.json files.  
 
 `src > fr > fr.json`:  
 
